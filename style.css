@@ -1,0 +1,186 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --ff-heading:'Staatliches',sans-serif;
+  --ff-texting:'Palanquin',sans-serif;
+
+  --bc-body:#FFFFFF;
+  --bc-heading:#8E9AAF;
+  --bc-heading-line:#CBC0D3;
+  --bc-texting:#FEEAFA;
+
+  font-size:62.5%;
+  --fs-body:1.6rem;
+  --fc-primary:#4A4E69;
+  --fc-secundary:#23053A;
+
+  --fs-heading: clamp(4.0rem, 1rem + 5vw, 5.6rem);
+}
+
+body{
+  background-color: var(--bc-body);
+  font-family: var(--ff-heading);
+  font-size: 2rem;
+}
+
+.page{
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+header{
+  background-color:var(--bc-heading);
+  height: 29.5rem;
+
+}
+
+header img{
+  display: flex;
+  margin: 0 auto;
+  padding-top:3.2rem;
+}
+
+header h1{
+  text-align: center;
+  margin: 3.2rem auto 2.9rem;
+  height: 5.2rem;
+  padding-top: 8px;
+  
+  background-color: var(--bc-heading-line);
+  color: var(--bc-body);
+  
+  font-family: var(--ff-heading);
+  text-transform: uppercase;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
+
+
+main{
+  display: grid;
+  gap: 3.6rem;
+
+  animation: downtop 1s 350ms backwards;
+}
+
+main p{
+  font-family: var(--ff-texting);
+  font-size: 2rem;
+  text-align: center;
+  padding: 1.4rem 3.2rem;
+  align-items: center;
+  color: var(--fc-secundary);
+  line-height: 2.1rem;
+}
+
+main img{
+  width: 100%;
+  height: auto;
+  padding: 1.4rem 3.2rem;
+}
+
+.card{
+  position: relative;
+  font-family: var(--ff-heading);
+}
+
+.card img{
+  border-radius: 2rem;
+  transition: transform 700ms;
+}
+
+.card img:hover{
+  transform: scale(1.1);
+}
+
+h2{
+  animation: topdown 3s;
+}
+
+.card h2{
+  position: absolute;
+  top: 3rem;
+  right: 4.5rem;
+
+  display: flex;
+
+  
+}
+
+.card h2{
+  
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-size: var(--fs-body);
+  font-weight: 400;
+  
+  color:var(--fc-primary);
+  background-color: var(--bc-texting);
+  
+  border-radius: 2rem;
+  padding: 0 1.7rem;
+  height: 3.4rem;
+  width: fit-content;
+
+  
+  display: inline-flex;
+  align-items: center;
+  
+}
+
+
+@keyframes topdown{
+  0%{
+    opacity: 0;
+    transform: translateY(-15px)
+  }
+
+  100%{
+    opacity: 1;
+    transform: translatey(0)
+  }
+}
+
+@keyframes downtop{
+  0%{
+    opacity: 0;
+    transform: translateY(15);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width:700px){
+
+  .page{
+    max-width: 117rem;
+    padding: 0 5rem;
+
+  }
+
+  main p{
+    font-family: var(--ff-texting);
+    font-size: 2rem;
+    text-align: center;
+    padding: 1.4rem 3.2rem;
+    align-items: center;
+    color: var(--fc-secundary);
+    line-height: 2.1rem;
+    width: 70rem;
+    margin: auto;
+  }
+
+  .card{
+    width: 70rem;
+    margin: 0 auto;
+  }
+}
